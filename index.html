@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Jug Problem Solver | Solar System</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="app-layout">
+      <div class="container glass-panel">
+      <header>
+        <h1 class="glow-text">Water Jug Solver</h1>
+        <p class="subtitle">A.I. BFS Algorithm • State Space Traversal</p>
+      </header>
+
+      <main>
+        <section class="controls">
+          <div class="input-group">
+            <label for="jug-a-capacity">Jug A (Liters)</label>
+            <input
+              type="number"
+              id="jug-a-capacity"
+              value="4"
+              min="1"
+              max="100"
+            />
+          </div>
+          <div class="input-group">
+            <label for="jug-b-capacity">Jug B (Liters)</label>
+            <input
+              type="number"
+              id="jug-b-capacity"
+              value="3"
+              min="1"
+              max="100"
+            />
+          </div>
+          <div class="input-group">
+            <label for="target-capacity">Target (Liters)</label>
+            <input
+              type="number"
+              id="target-capacity"
+              value="2"
+              min="1"
+              max="100"
+            />
+          </div>
+          <button id="solve-btn" class="cyber-btn">SOLVE & ANIMATE</button>
+        </section>
+
+        <section class="visualizer">
+          <div class="jug-container">
+            <div class="planet jug-a" id="planet-a">
+              <div class="water-level" id="level-a"></div>
+              <span class="capacity-text" id="text-a">0 / 4</span>
+            </div>
+            <div class="jug-label">Jug A</div>
+          </div>
+
+          <div class="action-display">
+            <div id="current-action" class="action-text blink">
+              Waiting for input...
+            </div>
+            <div id="insight-display" class="insight-text opacity-0"></div>
+            <div class="arrow glow-arrow">➜</div>
+          </div>
+
+          <div class="jug-container">
+            <div class="planet jug-b" id="planet-b">
+              <div class="water-level" id="level-b"></div>
+              <span class="capacity-text" id="text-b">0 / 3</span>
+            </div>
+            <div class="jug-label">Jug B</div>
+          </div>
+        </section>
+
+        <section class="steps-panel glass-panel">
+          <h3>Traversal Steps</h3>
+          <ul id="steps-list">
+            <li>Ready to explore state space.</li>
+          </ul>
+        </section>
+      </main>
+      </div>
+
+      <aside class="info-sidebar glass-panel">
+        <h2>About The Project</h2>
+        <div class="info-section">
+          <h3>💧 The Problem</h3>
+          <p>The Water Jug Problem involves measuring a specific quantity of water using two jugs with fixed capacities. How can you reach the exact target using only Fill, Empty, and Pour operations?</p>
+        </div>
+        <div class="info-section">
+          <h3>🧠 The Algorithm</h3>
+          <p>We use an AI search technique called <strong>Breadth-First Search (BFS)</strong>. BFS systematically explores the state space level by level, which guarantees finding the <em>shortest possible sequence of steps</em> (the optimal path).</p>
+        </div>
+        <div class="info-section">
+          <h3>🌐 State Space</h3>
+          <p>Each state is <code>(Jug A, Jug B)</code>. The AI builds a graph of valid moves and uses a queue and a 'visited set' to avoid infinite loops and find the goal efficiently.</p>
+        </div>
+        <div class="info-section">
+          <h3>🎮 How It Works</h3>
+          <p>Enter your capacities and target. Watch the AI simulate the solution step-by-step. <strong>Click on any step</strong> in the traversal list to replay its exact animation and get specific mathematical insights!</p>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
